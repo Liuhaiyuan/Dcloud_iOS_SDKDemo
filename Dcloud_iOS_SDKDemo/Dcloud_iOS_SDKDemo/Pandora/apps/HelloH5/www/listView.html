@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+    
+    <head>
+        <meta charset="UTF-8">
+            <title></title>
+            <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+            <link href="css/mui.min.css" rel="stylesheet" />
+            </head>
+    
+    <body>
+        <script src="js/mui.min.js"></script>
+        <script type="text/javascript">
+            mui.init()
+            </script>
+        
+        <script language="JavaScript" type="text/javascript">
+            
+            function didOnSelected(itemId) {
+                alert("您点击了" + itemId);
+            }
+        
+        mui(".mui-table-view").on('tap','.mui-table-view-cell',function(){
+                                  var cellId = this.getAttribute("id");
+                                  
+                                 // alert("点击"+cellId);
+                                  alert("in");
+                                  })
+                                  
+            </script>
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell">
+                <span id="tableViewCellSpan" class="didOnSelected">item 1</span>
+            </li>
+            <li class="mui-table-view-cell">
+                <a href=""><span id="" >item 2</span></a>
+            </li>
+        </ul>
+    </body>
+    
+</html>

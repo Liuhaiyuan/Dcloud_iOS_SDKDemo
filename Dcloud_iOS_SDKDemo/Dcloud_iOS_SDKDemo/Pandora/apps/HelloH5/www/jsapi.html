@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="MobileOptimized" content="320"/>
+        <title>H5Plugin</title>
+        <script type="text/javascript" src="./js/common.js"></script>
+        <script type="text/javascript" src="./js/testplugin.js"></script>
+        
+        <script type="text/javascript">
+            function pluginShow() {
+                alert("duwq");
+                plus.plugintest.PluginTestFunction("Html5","Plus","AsyncFunction","MultiArgument!",function( result ) {alert( result );},function(result){alert(result)});
+                alert("点击");
+            }
+        
+        function pluginShowArrayArgu() {
+            var test=document.getElementById("buttonId");
+            plus.plugintest.PluginTestFunctionArrayArgu( ["Html5","Plus","AsyncFunction","ArrayArgument!"], function( result ) {
+            test.innerText=result},function(result){alert(result)});
+        }
+        
+        function pluginGetString()
+        {
+            alert(plus.plugintest.PluginTestFunctionSync("Html5","Plus","SyncFunction","MultiArgument!"));
+        }
+        
+        function pluginGetStringArrayArgu()
+        {
+            var Argus = plus.plugintest.PluginTestFunctionSyncArrayArgu(["Html5","Plus","SyncFunction","ArrayArgument!"]);
+            alert( Argus.RetArgu1 + "_" +  Argus.RetArgu2 + "_" + Argus.RetArgu3  + "_" + Argus.RetArgu4 );
+        }
+        
+            </script>
+        <link rel="stylesheet" href="./css/common.css" type="text/css" charset="utf-8"/>
+    </head>
+    <body>
+        <header>
+            <div class="nvbt" onclick="back();"><div class="iback"></div></div>
+            <div class="nvtt">PluginTest</div>
+        </header>
+        <div id="dcontent" class="dcontent">
+          <button id="buttonId">First</button>
+            <br/>
+            <input type="button" name="pluginshow" id="pluginshow" value="pluginshow" onclick="pluginShow()" />
+
+            <div class="button" onclick="pluginShow()">PluginTestFunction()</div>
+            <div class="button" onclick="pluginShowArrayArgu()">PluginTestFunctionArrayArgu()</div>
+            <div class="button" onclick="pluginGetString()">PluginTestFunctionSync()</div>
+            <div class="button" onclick="pluginGetStringArrayArgu()">PluginTestFunctionSyncArrayArgu()</div>
+            <br/>
+        </div>
+        
+    </body>
+</html>
