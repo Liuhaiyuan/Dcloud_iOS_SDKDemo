@@ -75,9 +75,8 @@ static NSString *resultCId;
 
         PDRPluginResult *result = [PDRPluginResult resultWithStatus:PDRCommandStatusOK messageAsArray: pResultString];
 
-        // 如果Native代码运行结果和预期不同，需要通过回调通知JS层出现错误，并返回错误提示
-        //PDRPluginResult *result = [PDRPluginResult resultWithStatus:PDRCommandStatusError messageAsString:@"惨了! 出错了！ 咋(wu)整(liao)"];
-
+        // 如果Native代码运行结果和预期不 同，需要通过回调通知JS层出现错误，并返回错误提示
+//        PDRPluginResult *resultError = [PDRPluginResult resultWithStatus:PDRCommandStatusError messageAsString:@"惨了! 出错了！ 咋(wu)整(liao)"];
         // 通知JS层Native层运行结果
         [self toCallback:cbId withReslut:[result toJSONString]];
     }
